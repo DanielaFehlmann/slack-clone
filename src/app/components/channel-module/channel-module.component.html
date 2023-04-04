@@ -1,0 +1,66 @@
+<mat-toolbar-row class="channel-toolbar">
+  <div class="flex-ac">
+    <mat-icon *ngIf="channelService.channelName" fontIcon>{{
+      channelService.channelIsPrivate ? "lock" : "numbers"
+    }}</mat-icon>
+    <span> {{ channelService.channelName }}</span>
+  </div>
+</mat-toolbar-row>
+<div
+  class="leftContent"
+  [routerLink]="['/home/channel/' + channelService.channelId]"
+>
+  <div #scrollContainer id="scrollContainer" class="scroll-container">
+    <app-thread-card
+      [thread]="true"
+      class="threadCard"
+      *ngFor="let thread of channelService.threads; index as i"
+      [channelId]="channelService.channelId"
+      [threadId]="thread.threadId"
+      [amountAnswers]="thread['MESSAGES'].length - 1"
+      [lastAnswer]="
+        thread['MESSAGES'][thread['MESSAGES'].length - 1]['timestamp'][
+          'seconds'
+        ] * 1000
+      "
+      [author]="thread['MESSAGES'][0]['author']['displayName']"
+      [userImage]="thread['MESSAGES'][0]['author']['userImage']"
+      [message]="thread['MESSAGES'][0]['content']"
+      [image]="thread['MESSAGES'][0]['image']"
+      [timestamp]="thread['MESSAGES'][0]['timestamp']['seconds'] * 1000"
+      [class.d-none]="
+        !thread['MESSAGES'][0]['content']
+          .toLowerCase()
+          .includes(channelService.searchValue.toLowerCase()) &&
+        !thread['MESSAGES'][0]['author']['displayName']
+          .toLowerCase()
+          .includes(channelService.searchValue.toLowerCase())
+      "
+    >
+    </app-thread-card>
+  </div>
+  <div
+    class="containerEditor"
+    id="editorChannel"
+    (click)="channelService.editorRef = 'channel'"
+  >
+    <app-text-editor editorRef="channel"></app-text-editor>
+    <div class="imagesContainerChannel" id="imagesChannel">
+      <div
+        *ngFor="let image of this.imgUploadService.imageURL"
+        class="imageEditorContainer"
+      >
+        <img
+          src="{{ image }}"
+          class="imageInMessage"
+          (click)="this.channelService.openImg(image)"
+        />
+        <img
+          src="assets/img/x.svg"
+          class="deleteImage"
+          (click)="this.imgUploadService.deleteImage(image)"
+        />
+      </div>
+    </div>
+  </div>
+</div>

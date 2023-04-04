@@ -1,0 +1,57 @@
+<h1 mat-dialog-title>
+  Settings <span *ngIf="guest">(disabled for guest-user)</span>
+</h1>
+<div class="dialog-wrapper">
+  <div class="dialog-left" mat-dialog-content id="dialog-content">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="name" [disabled]="guest" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="email" [disabled]="guest" />
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-right">
+    <div class="profilePic">
+      <div>
+        <img
+          src="{{
+            imgUploadService.newPhotoURL ?? 'assets/img/profile_icon.png'
+          }}"
+          class="profile_image"
+        />
+      </div>
+    </div>
+
+    <div class="button-upload">
+      <label for="fileDialog" class="upload-file">
+        <i class="material-icons">cloud_upload</i>
+        Upload image
+      </label>
+      <input
+        [disabled]="guest"
+        (change)="imgUploadService.readURL($event)"
+        type="file"
+        id="fileDialog"
+        accept=".png,.jpg,.jpeg,.svg"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="dialog-btns">
+  <div mat-dialog-actions>
+    <button
+      mat-button
+      mat-dialog-close
+      (click)="imgUploadService.cancelUpload()"
+    >
+      Cancel
+    </button>
+    <button mat-button cdkFocusInitial (click)="updateUser()" mat-dialog-close>
+      Save
+    </button>
+  </div>
+</div>

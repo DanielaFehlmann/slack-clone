@@ -1,0 +1,55 @@
+<mat-toolbar-row class="channel-toolbar">
+  <div class="flex-ac flex-sb full-width">
+    <div>
+      <span>Thread</span>
+      <span class="channel-name"
+        ><mat-icon>numbers</mat-icon> {{ threadService.channelName }}</span
+      >
+    </div>
+
+    <div class="close-thread-btn">
+      <mat-icon (click)="closeThread()">close</mat-icon>
+    </div>
+  </div>
+</mat-toolbar-row>
+<div id="scrollContainerThread" class="rightContent">
+  <div *ngIf="threadService.thread">
+    <app-thread-card
+      *ngFor="let message of threadService.thread['MESSAGES']; index as i"
+      [author]="message['author']['displayName']"
+      [userImage]="message['author']['userImage']"
+      [message]="message['content']"
+      [image]="message['image']"
+      [timestamp]="message['timestamp']['seconds'] * 1000"
+      [class.d-none]="
+        !message['content']
+          .toLowerCase()
+          .includes(channelService.searchValue.toLowerCase()) &&
+        !message['author']['displayName']
+          .toLowerCase()
+          .includes(channelService.searchValue.toLowerCase())
+      "
+    >
+    </app-thread-card>
+  </div>
+  <div class="containerEditor" id="editorThread" (click)="changeRef()">
+    <app-text-editor editorRef="thread"></app-text-editor>
+    <div class="imagesContainerThread" id="imagesThread">
+      <div
+        *ngFor="let image of this.imgUploadService.imageURL"
+        class="imageEditorContainer"
+      >
+        <img
+          src="{{ image }}"
+          class="imageInMessage"
+          (click)="this.channelService.openImg(image)"
+        />
+        <img
+          src="/assets/img/x.svg"
+          class="deleteImage"
+          (click)="this.imgUploadService.deleteImage(image)"
+        />
+      </div>
+    </div>
+  </div>
+</div>

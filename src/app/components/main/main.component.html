@@ -1,0 +1,53 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer *ngIf="!globalFunctions.menuCollapsed" mode="side" opened>
+    <div class="server-name">
+      <div class="logo">
+        <img src="./assets/img/logo.png" />
+        <span>Slack Clone</span>
+        <button
+          class="new-msg-btn"
+          mat-mini-fab
+          (click)="globalFunctions.closeMenu()"
+          [routerLink]="['/home/new-chat']"
+        >
+          <mat-icon [ngStyle]="{ color: 'black' }">edit_note</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="nav-scroll-container">
+      <div class="navigation">
+        <div
+          (click)="globalFunctions.closeMenu()"
+          [routerLink]="['/home/threads-list']"
+          routerLinkActive="activeLink"
+          class="nav-hl flex-ac"
+        >
+          <mat-icon font-icon>comment</mat-icon>
+          <p>Threads</p>
+        </div>
+        <div
+          (click)="globalFunctions.closeMenu()"
+          [routerLink]="['/home/user-list']"
+          routerLinkActive="activeLink"
+          class="nav-hl flex-ac"
+        >
+          <mat-icon font-icon>supervisor_account</mat-icon>
+          <p>Users</p>
+        </div>
+      </div>
+
+      <app-channels></app-channels>
+      <app-direct-messages-section></app-direct-messages-section>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="leftAndRight">
+      <div class="left" *ngIf="channelService.channelIsOpen">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="right" *ngIf="globalFunctions.threadIsOpen">
+        <app-thread-side-module></app-thread-side-module>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

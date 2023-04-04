@@ -1,0 +1,12 @@
+<app-header></app-header>
+<app-main></app-main>
+
+<div
+  class="openedImgContainer"
+  [ngClass]="channelService.status ? 'openedImgContainer' : 'd-none'"
+  (click)="channelService.status = false"
+>
+  <img src="{{ channelService.image }}" class="openedImg" />
+</div>
+
+<app-legals *ngIf="globalFunctions.legals"></app-legals>

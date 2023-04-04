@@ -1,0 +1,392 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~quill/dist/quill.core.css";
+@import "~quill/dist/quill.bubble.css";
+@import "~quill/dist/quill.snow.css";
+@import "~quill-emoji/dist/quill-emoji.css";
+@import "material-icons/iconfont/material-icons.css";
+@import "styles/fonts.scss";
+
+a {
+  color: white !important;
+  text-decoration: none;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+:root {
+  --bg-color-side-nav: rgb(24, 23, 27);
+}
+
+html,
+body {
+  height: 100svh;
+  font-size: 14px;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.resizeImg {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+
+  &:hover {
+    filter: invert(0.1);
+  }
+
+  &:active {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+p {
+  margin: 0 !important;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.flex-ac {
+  display: flex;
+  align-items: center;
+}
+
+.flex-sb {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown-collapsed {
+  display: none;
+}
+
+.rotate90 {
+  transform: rotate(-90deg);
+}
+
+// Quil Editor Changes //
+
+#emoji-palette {
+  top: -205px !important;
+  left: unset !important;
+  max-width: 400px;
+  width: 100%;
+}
+
+#tab-panel {
+  max-height: 120px !important;
+}
+
+.ql-toolbar {
+  border: 1px solid white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.ql-container {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.ql-toolbar.ql-snow {
+  background-color: rgb(31, 33, 37);
+  padding: 8px 8px 8px 36px;
+}
+
+.ng-star-inserted.ql-container.ql-snow {
+  background-color: rgb(31, 33, 37);
+}
+
+.ql-snow.ql-toolbar button:hover,
+.ql-snow .ql-toolbar button:hover,
+.ql-snow.ql-toolbar button:focus,
+.ql-snow .ql-toolbar button:focus,
+.ql-snow.ql-toolbar button.ql-active,
+.ql-snow .ql-toolbar button.ql-active,
+.ql-snow.ql-toolbar .ql-picker-label:hover,
+.ql-snow .ql-toolbar .ql-picker-label:hover,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active,
+.ql-snow.ql-toolbar .ql-picker-item:hover,
+.ql-snow .ql-toolbar .ql-picker-item:hover,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected {
+  color: white;
+}
+.ql-snow.ql-toolbar button:hover .ql-fill,
+.ql-snow .ql-toolbar button:hover .ql-fill,
+.ql-snow.ql-toolbar button:focus .ql-fill,
+.ql-snow .ql-toolbar button:focus .ql-fill,
+.ql-snow.ql-toolbar button.ql-active .ql-fill,
+.ql-snow .ql-toolbar button.ql-active .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-fill,
+.ql-snow.ql-toolbar button:hover .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar button:hover .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar button:focus .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar button:focus .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill {
+  fill: white;
+}
+.ql-snow.ql-toolbar button:hover .ql-stroke,
+.ql-snow .ql-toolbar button:hover .ql-stroke,
+.ql-snow.ql-toolbar button:focus .ql-stroke,
+.ql-snow .ql-toolbar button:focus .ql-stroke,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke,
+.ql-snow.ql-toolbar button:hover .ql-stroke-miter,
+.ql-snow .ql-toolbar button:hover .ql-stroke-miter,
+.ql-snow.ql-toolbar button:focus .ql-stroke-miter,
+.ql-snow .ql-toolbar button:focus .ql-stroke-miter,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke-miter,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter {
+  stroke: white;
+}
+
+.ql-editor.ql-blank::before {
+  color: rgba(255, 255, 255, 0.726);
+}
+
+.ql-snow .ql-editor img {
+  max-width: 130px !important;
+}
+
+.ql-editor {
+  max-height: 250px;
+  min-height: 80px;
+}
+
+.editor[_ngcontent-bbk-c150] quill-editor[_ngcontent-bbk-c150] {
+  height: unset !important;
+}
+
+// Material Design Changes //
+
+.mat-icon {
+  overflow: unset !important;
+}
+
+.mat-mdc-card {
+  border-radius: unset !important;
+}
+
+.mat-mdc-menu-content {
+  padding: 0 !important;
+  background-color: rgb(56, 56, 56);
+}
+.mat-mdc-menu-content button span {
+  color: white;
+}
+
+.mdc-dialog__container * {
+  color: white !important;
+
+  .mdc-button:hover:not([disabled]) {
+    background: rgb(77, 77, 77) !important;
+  }
+  .mdc-checkbox__ripple {
+    background: rgb(110, 110, 110) !important;
+  }
+  .mdc-text-field__input {
+    caret-color: unset !important;
+  }
+
+  .mdc-line-ripple::after {
+    border-bottom-color: white !important;
+  }
+  .mdc-checkbox__background {
+    border-color: white !important;
+  }
+  .mat-mdc-text-field-wrapper {
+    background-color: rgba(56, 56, 56, 1) !important;
+  }
+}
+
+.mdc-menu-surface {
+  background-color: unset !important;
+}
+
+.mat-mdc-menu-item:hover:not([disabled]) {
+  background: rgb(77, 77, 77) !important;
+}
+
+.mat-mdc-dialog-surface {
+  background-color: rgba(56, 56, 56, 1) !important;
+}
+
+.cdk-global-scrollblock {
+  overflow: hidden !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ababad;
+  -webkit-border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.imageInMessage {
+  height: 58px;
+  width: 58px;
+  margin: 2px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 1px solid #575757;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1.15);
+  }
+}
+
+.imageEditorContainer {
+  position: relative;
+}
+
+.deleteImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  background-color: rgba(255, 255, 255, 0.692);
+  border-radius: 29px;
+  opacity: 1;
+  filter: invert(0.2);
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1.15);
+  }
+}
+
+.imageUploaded {
+  height: 100px !important;
+  width: auto !important;
+  margin: 5px;
+
+  &:hover {
+    filter: brightness(1.15);
+  }
+}
+
+.openedImgContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(19, 19, 20, 0.8);
+  z-index: 10000;
+}
+
+.openedImg {
+  max-height: calc(100vh - 50px);
+  max-width: calc(100vw - 50px);
+  border-radius: 10px;
+
+  &:hover {
+    cursor: unset;
+    filter: unset;
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.containerEditor {
+  position: relative;
+}
+
+.channelitem:not(.activeLink) .badge-more-users {
+  color: rgb(134, 134, 134);
+  border: 1px solid rgb(134, 134, 134);
+}
+
+.channelitem.activeLink .badge-more-users {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.mat-drawer-inner-container {
+  overflow: hidden !important;
+}
+
+.activeLink {
+  border-radius: 5px;
+  background-color: rgba(255, 187, 0, 0.596);
+}

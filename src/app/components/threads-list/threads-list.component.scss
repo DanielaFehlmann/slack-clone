@@ -1,0 +1,43 @@
+@import "../channel-module/channel-module.component.scss";
+
+.wrapper {
+  width: 100%;
+  position: absolute;
+  top: 96px;
+  display: flex;
+  justify-content: center;
+}
+
+.welcome-msg {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 34px;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+    font-size: 34px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
+
+.loader1 {
+  height: 150px;
+  width: 150px;
+  animation: pulse 1s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
