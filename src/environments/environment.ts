@@ -1,11 +1,11 @@
 export const environment = {
   production: false,
   firebase: {
-    projectId: 'slack-clone-e1e2b',
-    appId: '1:664976476249:web:2d9833015fe0da6b5b8948',
-    storageBucket: 'slack-clone-e1e2b.appspot.com',
-    apiKey: 'AIzaSyBFYQa0mT-pSo4WHM-WTqqCMQTGtVZ21oI',
-    authDomain: 'slack-clone-e1e2b.firebaseapp.com',
-    messagingSenderId: '664976476249',
+    apiKey: "AIzaSyAKNf88U2UJP6rjAH5zbCExLpRINN2D-g8",
+    authDomain: "slack-clone-803cc.firebaseapp.com",
+    projectId: "slack-clone-803cc",
+    storageBucket: "slack-clone-803cc.appspot.com",
+    messagingSenderId: "190619724199",
+    appId: "1:190619724199:web:f5fc3ce4568b1ce67dae82"
   },
 };
