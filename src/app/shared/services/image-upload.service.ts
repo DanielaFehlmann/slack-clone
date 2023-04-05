@@ -103,14 +103,10 @@ export class ImageUploadService {
    */
   addStyleToEditor() {
     if (this.channelService.editorRef == 'channel') {
-      let editor = document.querySelector(
-        '#editorChannel .ql-editor'
-      ) as HTMLElement;
+      let editor = document.querySelector('#editorChannel .ql-editor') as HTMLElement;
       this.addMarginPadding(editor);
     } else if (this.channelService.editorRef == 'thread') {
-      let editor = document.querySelector(
-        '#editorThread .ql-editor'
-      ) as HTMLElement;
+      let editor = document.querySelector('#editorThread .ql-editor') as HTMLElement;
       this.addMarginPadding(editor);
     } else if (this.channelService.editorRef == 'chat') {
       let editor = document.querySelector('#editorChat .ql-editor') as HTMLElement;
@@ -152,6 +148,7 @@ export class ImageUploadService {
     this.removeImageContainer();
     this.removeStyleFromEditor();
     this.imgUploadEditorRef = '';
+    (<HTMLInputElement>document.getElementById('fileEditor')).value = '';
   }
 
   /**
