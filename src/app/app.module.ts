@@ -45,7 +45,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { ChannelsComponent } from './components/channels/channels.component';
 import { DirectMessagesSectionComponent } from './components/direct-messages-section/direct-messages-section.component';
-import { SignFooterComponent } from './components/sign-footer/sign-footer.component';
 import { SignHeaderComponent } from './components/sign-header/sign-header.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { DialogCreateChannelComponent } from './components/dialog-create-channel/dialog-create-channel.component';
@@ -73,7 +72,6 @@ import { LegalsComponent } from './components/legals/legals.component';
     MainComponent,
     ChannelsComponent,
     DirectMessagesSectionComponent,
-    SignFooterComponent,
     SignHeaderComponent,
     ForgotPasswordComponent,
     DialogCreateChannelComponent,

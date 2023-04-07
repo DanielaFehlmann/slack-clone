@@ -120,7 +120,7 @@ export class ImageUploadService {
    */
   addMarginPadding(editor) {
     editor.style.margin = '0 0 90px 0';
-    editor.style.padding = '12px 15px 0 15px';
+    editor.style.padding = '12px 40px 0 15px';
   }
 
   /**
@@ -181,7 +181,7 @@ export class ImageUploadService {
     if (this.imageURL.length == 0) {
       for (let i = 0; i < editor.length; i++) {
         const element = editor[i] as HTMLElement;
-        element.style.padding = '12px 15px 12px 15px';
+        element.style.padding = '12px 45px 12px 15px';
         element.style.margin = '0';
       }
     }

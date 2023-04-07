@@ -13,7 +13,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class ChannelService {
   channelName: string = '';
-  channelIsOpen: boolean = true;
   openedChannel = false;
   threads: any = [];
   threads$: Observable<any>;
@@ -75,11 +74,17 @@ export class ChannelService {
    * function to change the layout of the page
    */
   changeChannelLayout() {
-    if (innerWidth <= 620 && !this.globalFunctions.menuCollapsed) {
+    if (innerWidth <= 620) {
       this.globalFunctions.menuCollapsed = true;
       this.globalFunctions.threadIsOpen = false;
-      this.channelIsOpen = true;
+    } else if (
+      innerWidth <= 900 &&
+      !this.globalFunctions.menuCollapsed &&
+      this.globalFunctions.threadIsOpen
+    ) {
+      this.globalFunctions.threadIsOpen = false;
     }
+    this.globalFunctions.channelIsOpen = true;
   }
 
   /**
@@ -108,7 +113,9 @@ export class ChannelService {
       this.sortThreads(threads);
       this.getUserNames(threads);
       this.threads = threads;
-      this.globalFunctions.scrollCounter = 0;
+      setTimeout(() => {
+        this.globalFunctions.scrollCounter = 0;
+      }, 0);
     });
   }
 
@@ -170,11 +177,12 @@ export class ChannelService {
    * function to change the layout of the page
    */
   changeThreadLayout() {
-    if (innerWidth <= 800) {
-      this.globalFunctions.menuCollapsed = true;
+    if (innerWidth < 1200) {
+      this.globalFunctions.channelIsOpen = false;
     }
-    if (innerWidth <= 620) {
-      this.channelIsOpen = false;
+    if (innerWidth < 620) {
+      this.globalFunctions.menuCollapsed = true;
+      this.globalFunctions.channelIsOpen = false;
     }
   }
 

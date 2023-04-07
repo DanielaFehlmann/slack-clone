@@ -99,15 +99,36 @@ p {
 
 // Quil Editor Changes //
 
+.ql-syntax {
+  overflow: hidden;
+  width: 270px;
+  white-space: pre-wrap;
+  max-height: 250px;
+  margin-bottom: 50px;
+}
+
 #emoji-palette {
-  top: -205px !important;
+  top: -127px !important;
   left: unset !important;
   max-width: 400px;
   width: 100%;
 }
 
 #tab-panel {
-  max-height: 120px !important;
+  max-height: 65px !important;
+}
+
+#tab-toolbar {
+  padding: 0;
+}
+
+#tab-toolbar ul {
+  height: 30px;
+  padding: 2px 0 0 2px;
+}
+
+.emoji-tab {
+  min-height: 28px;
 }
 
 .ql-toolbar {
@@ -123,7 +144,7 @@ p {
 
 .ql-toolbar.ql-snow {
   background-color: rgb(31, 33, 37);
-  padding: 8px 8px 8px 36px;
+  padding: 8px 36px 8px 8px;
 }
 
 .ng-star-inserted.ql-container.ql-snow {
@@ -218,6 +239,7 @@ p {
 .ql-editor {
   max-height: 250px;
   min-height: 80px;
+  padding: 12px 45px 12px 15px;
 }
 
 .editor[_ngcontent-bbk-c150] quill-editor[_ngcontent-bbk-c150] {
