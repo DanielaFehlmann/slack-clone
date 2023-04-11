@@ -3,7 +3,7 @@
   <quill-editor (onEditorChanged)="getContent($event)" id="editor" [modules]="config"></quill-editor>
 
   <button class="send-btn" (click)="sendMessage()">
-    <mat-icon matTooltip="send">send</mat-icon>
+    <mat-icon matTooltip="ctrl + enter">send</mat-icon>
   </button>
 
   <div class="uploadImageEditor" (click)="setImageUploadEditorRef()">
